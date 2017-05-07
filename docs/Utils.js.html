@@ -1,0 +1,972 @@
+
+<!-- The files in order will appear first in the navbar, all others will be alphabetical--><!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>JSpectraViewer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <style>
+      .jumbotron {
+        margin-top: 55px;
+        padding: 0;
+      }
+      
+      .main {
+        margin-top: 10px;
+        margin-right: 20px;
+      }
+      
+      section {
+        padding-top: 30px;
+      }
+      
+      .label-info {
+        background-color: #3a87ad;
+      }
+      
+      .bs-docs-sidenav {
+        margin-bottom: 10px;
+        margin-top: 50px;
+      }
+      
+      .bs-docs-sidenav i{
+        width: 8px;
+        height: 8px;
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+      
+      .bs-docs-sidenav > li > a {
+        word-wrap: break-word;
+        padding: 2px 10px;
+        border: 1px solid #e5e5e5;
+        margin: 0 0 -1px 0;
+        background-color: white;
+      }
+      
+      .bs-docs-sidenav > .active > a {
+        padding: 2px 10px;
+        color: white;
+        background-color: #0088cc;
+      }
+      
+      .bs-docs-sidenav > li:first-child > a {
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+      }
+      
+      .bs-docs-sidenav > li:last-child > a {
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+      
+      .no-wrap {
+        white-space: nowrap;
+      }
+      
+      .footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 70px;
+        border-top: 1px solid #e5e5e5;
+        background-color: #f5f5f5;
+      }
+      
+      .affix-top,.affix{
+        position: static;
+      }
+      
+      @media (min-width: 768px) {
+      
+        .nav-list.affix-top {
+          position: static;
+        }
+      
+        .nav-list.affix {
+          position: fixed;
+        }
+      }
+      
+      code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}
+      div.description {margin: 14px 0; padding-top: 14px; border-bottom:1px solid #eee; }
+      .tags {}
+      .ctx-type {
+        display:inline-block;
+        margin-right:0.5em;
+      }
+      
+      // CUSTOM
+      
+      .test {}
+      // .source-code { display: none; }
+      
+      
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".scrollspy">
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#main-nav" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand">JSV Docs</a>
+        </div>
+        <div id="main-nav" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Docs</a></li>
+            <li><a href="../demo/viewer.html">Demo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- div.jumbotron-->
+    <!--   div.container-->
+    <!--     h2= title-->
+    <div class="container-fluid main">
+      <div class="row">
+        <div class="col-sm-2">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav affix-top">
+            <li><a href="index.html">Main</a></li>
+            <li><a href="SpectraViewer.js.html">SpectraViewer</a></li>
+            <li><a href="Spectrum.js.html">Spectrum</a></li>
+            <li><a href="Compound.js.html">Compound</a></li>
+            <li><a href="Cluster.js.html">Cluster</a></li>
+            <li><a href="Peak.js.html">Peak</a></li>
+            <li class="active"><a href="Utils.js.html">Utils</a></li>
+            <li><a href="JSV.js.html">JSV</a></li>
+            <li><a href="JSVinit.js.html">JSVinit</a></li>
+            <li><a href="SVAssignments.js.html">SVAssignments</a></li>
+            <li><a href="SVClusterNavigator.js.html">SVClusterNavigator</a></li>
+            <li><a href="SVData.js.html">SVData</a></li>
+            <li><a href="SVDialog.js.html">SVDialog</a></li>
+            <li><a href="SVEvents.js.html">SVEvents</a></li>
+            <li><a href="SVHelp.js.html">SVHelp</a></li>
+            <li><a href="SVHighlighter.js.html">SVHighlighter</a></li>
+            <li><a href="SVInitializers.js.html">SVInitializers</a></li>
+            <li><a href="SVLabels.js.html">SVLabels</a></li>
+            <li><a href="SVLegend.js.html">SVLegend</a></li>
+            <li><a href="SVMenu.js.html">SVMenu</a></li>
+            <li><a href="SVPath.js.html">SVPath</a></li>
+            <li><a href="SVScale.js.html">SVScale</a></li>
+            <li><a href="SVSelection.js.html">SVSelection</a></li>
+            <li><a href="SVSet.js.html">SVSet</a></li>
+            <li><a href="SVSettings.js.html">SVSettings</a></li>
+            <li><a href="SVSimplify.js.html">SVSimplify</a></li>
+            <li><a href="SVStructure.js.html">SVStructure</a></li>
+            <li><a href="Zoombox.js.html">Zoombox</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-8">
+          <section id="default_for">
+            <h1>default_for</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>default_for(value, default_value)</span> -><span>Object</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value</td>
+                <td>Object</td>
+                <td><p>Returned if it is defined</p></td>
+              </tr>
+              <tr>
+                <td>default_value</td>
+                <td>Object</td>
+                <td><p>Returned if <em>value</em> is undefined</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Return the <em>default_value</em> if <em>value</em> is undefined</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="pixel_ratio">
+            <h1>pixel_ratio</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div>
+              <!-- span= symbol.ctx.string--><span>pixel_ratio()</span>
+            </p>
+          </section>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Return the pixel ratio. The default is 1.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="pixel">
+            <h1>pixel</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>pixel(value)</span> -><span>Intger</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value</td>
+                <td>Integer</td>
+                <td><p>Number of pixels</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Converts provided number of pixels based on pixel ratio which depends on the screen resolution. Typical displays will have a pixel ration of 1, while retina displays will have a pixel ration of 2.</p><p><strong>Important</strong>: Whenever drawing on the canvas, convert the pixels first using this method.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="merge">
+            <h1>merge</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>merge(object_1,object_2,..,object_n)</span> -><span>Object</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>object_1,object_2,..,object_n</td>
+                <td>Object</td>
+                <td><p>Objects to merge</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Merges top level properties of each supplied object.</p><pre><code class="lang-javascript">JSV.merge({a:1, b:1}, {b:2, c:2}, {c:3, d:3});
+//=&gt; {a: 1, b: 2, c: 3, d: 3}
+</code></pre>
+<p>If a non object is provided, it is ignored. This can be useful if merging function arguments that may be undefined.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="unique_id">
+            <h1>unique_id</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>unique_id(id_base, start, current_ids)</span> -><span>String</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id_base</td>
+                <td>String</td>
+                <td><p>Base of ids</p></td>
+              </tr>
+              <tr>
+                <td>start</td>
+                <td>Integer</td>
+                <td><p>Integer to start trying to creat ids with</p></td>
+              </tr>
+              <tr>
+                <td>current_ids</td>
+                <td>Array</td>
+                <td><p>Array of current ids</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Returns a string id using the <em>id_base</em> and <em>start</em> while making sure the id is not in <em>current_ids</em>.</p><pre><code class="lang-javascript">JSV.unique_id(&#39;spectra_&#39;, 1, [&#39;spectra_1&#39;, &#39;spectra_2&#39;]);
+//=&gt; &#39;spectra_3&#39;
+</code></pre>
+ </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="round">
+            <h1>round</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>round(value, places)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>value</td>
+                <td>Number</td>
+                <td><p>Number to round</p></td>
+              </tr>
+              <tr>
+                <td>places</td>
+                <td>Integer</td>
+                <td><p>Number of decimal places to round [Default: 2]</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Rounds the number use d3.round. The only reason to use this method is that it sets the default number of decimal places to 2.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="elapsed_time">
+            <h1>elapsed_time</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>elapsed_time(old_time)</span> -><span>Integer</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>old_time</td>
+                <td>Integer</td>
+                <td><p>Old time in milliseconds</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Returns the number of milliseconds elapsed since the supplied time. The returned time will have &#39;ms&#39; appended to it.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="index_of_value">
+            <h1>index_of_value</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>index_of_value(data, search_value, upper)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>data</td>
+                <td>Array</td>
+                <td><p>Array of numbers. Must be sorted from lowest to highest.</p></td>
+              </tr>
+              <tr>
+                <td>search_value</td>
+                <td>Number</td>
+                <td><p>The value to search for.</p></td>
+              </tr>
+              <tr>
+                <td>upper</td>
+                <td>Boolean</td>
+                <td><p>Only used if no element equals the <em>search_value</em> </p><ul>
+<li><em>true</em>: return index to right of value</li>
+<li><em>false</em>: return index to left of value [default]</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Binary search to find the index of data where data[index] equals <em>search_value</em>. If no element equals value, the returned index will be the upper or lower [default] index that surrounds the value.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="lorentzian">
+            <h1>lorentzian</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>lorentzian(x_value, center, width, amplitude)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>x_value</td>
+                <td>Number</td>
+                <td><p>The x value used to determine the y value</p></td>
+              </tr>
+              <tr>
+                <td>center</td>
+                <td>Number</td>
+                <td><p>Center of the lorentzian</p></td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>Number</td>
+                <td><p>Width of the lorentzian at half height</p></td>
+              </tr>
+              <tr>
+                <td>amplitude</td>
+                <td>Number</td>
+                <td><p>Amplitude of the lorentzian</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Return the y value for the <em>x_value</em> of a lorentzian peak with the specified <em>center</em>, <em>width</em>, and <em>amplitude</em>.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="sum_of_peaks">
+            <h1>sum_of_peaks</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>sum_of_peaks(x_value, peaks)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>x_value</td>
+                <td>Number</td>
+                <td><p>The x value used to determine the y value</p></td>
+              </tr>
+              <tr>
+                <td>peaks</td>
+                <td>Array</td>
+                <td><p>An Array or SVSet of Peaks.</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Calculates the cumulative Y value from the peaks at <em>x_value</em>. Each peak must have the following properties:</p><ul>
+<li><em>center</em></li>
+<li><em>width</em></li>
+<li><em>amplitude</em></li>
+</ul>
+ </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="xy_from_peaks">
+            <h1>xy_from_peaks</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>xy_from_peaks(peaks, number_of_points, lowerlim, fast)</span> -><span>Object</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>peaks</td>
+                <td>SVSet</td>
+                <td><p>A SVSet of peaks</p></td>
+              </tr>
+              <tr>
+                <td>number_of_points</td>
+                <td>Number</td>
+                <td><p>Number of points to create from the <em>lowerlim</em> to the <em>upperlim</em></p></td>
+              </tr>
+              <tr>
+                <td>lowerlim</td>
+                <td>Number</td>
+                <td><p>Lowest x value</p></td>
+              </tr>
+              <tr>
+                <td>lowerlim</td>
+                <td>Number</td>
+                <td><p>Highest x value</p></td>
+              </tr>
+              <tr>
+                <td>fast</td>
+                <td>Boolean</td>
+                <td><p>If true, only use peaks within the limits or close to the outside limits. This speeds up the calculation by ignoring peaks that are far away and thus contribute little to the plot within the limits.</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Generate an array of x/y points for the provided <em>peaks</em>, making sure to include the points at the peak amplitude for the peak within the limits.</p><p>The returned xy_data will have the following structure:</p><pre><code class="lang-javascript">xy_data = { x: [1,2,3], y: [4,5,6] }
+</code></pre>
+ </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="peaks_in_range">
+            <h1>peaks_in_range</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>peaks_in_range(peaks, lowerlim, upperlim, range)</span> -><span>SVSet</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>peaks</td>
+                <td>SVSet</td>
+                <td><p>A SVSet of Peaks</p></td>
+              </tr>
+              <tr>
+                <td>lowerlim</td>
+                <td>Number</td>
+                <td><p>The lower limit to look for peaks.</p></td>
+              </tr>
+              <tr>
+                <td>upperlim</td>
+                <td>Number</td>
+                <td><p>The upper limit to look for peaks.</p></td>
+              </tr>
+              <tr>
+                <td>range</td>
+                <td>range</td>
+                <td><p>Used to find peaks that are close to but outside of the limits. For example, a range of 2 will include peaks that have center value withing 2 peak widths of the limit.</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Return a SVSet of Peaks that are within the limits or close to the limits.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="peak_min">
+            <h1>peak_min</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>peak_min(peaks, widths)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>peaks</td>
+                <td>SVSet</td>
+                <td><p>SVSet of Peaks</p></td>
+              </tr>
+              <tr>
+                <td>widths</td>
+                <td>Number</td>
+                <td><p>The number of widths to subtract from the minimum peak center</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Returns the minimum x value for the supplied set of peaks. First finds the minimum peak by center, then subtracts the number of widths from the center.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="peak_max">
+            <h1>peak_max</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>peak_max(peaks, widths)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>peaks</td>
+                <td>SVSet</td>
+                <td><p>SVSet of Peaks</p></td>
+              </tr>
+              <tr>
+                <td>widths</td>
+                <td>Number</td>
+                <td><p>The number of widths to add from the maximum peak center</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Returns the maximum x value for the supplied set of peaks. First finds the maximum peak by center, then adds the number of widths to the center.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="number">
+            <h1>number</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>number(n)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>n</td>
+                <td>Object</td>
+                <td><p>The object to convert to a number</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Returns a number unless <em>n</em> is undefined in which case <em>undefined</em> is returned.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="isNumeric">
+            <h1>isNumeric</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>isNumeric(n)</span> -><span>Boolean</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>n</td>
+                <td>Object</td>
+                <td><p>The object to check</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Convience function to determine if an object is a number.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="decimalPlaces">
+            <h1>decimalPlaces</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>decimalPlaces(num)</span> -><span>Number</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>num</td>
+                <td>Number</td>
+                <td><p>The number to check</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Return the number of decimal places found in <em>num</em>.</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="convert_bayesil_data">
+            <h1>convert_bayesil_data</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>convert_bayesil_data(bayesil_data)</span> -><span>Object</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>bayesil_data</td>
+                <td>Object</td>
+                <td><p>Bayesil results as JSON</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Convert JSON results from Bayesil to the proper format for JSV</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+          <section id="create_bayesil_json">
+            <h1>create_bayesil_json</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div>
+              <!-- span= symbol.ctx.string--><span>create_bayesil_json(xy_spectrum, fit_spectrum)</span> -><span>Object</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>xy_spectrum</td>
+                <td>Object</td>
+                <td><p>The fid spectrum to extract xy data from</p></td>
+              </tr>
+              <tr>
+                <td>fit_spectrum</td>
+                <td>Object</td>
+                <td><p>The fit spectrum to extract compound data from</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Alter the descriptions-->
+          <!-- Remove <br />-->
+          <!-- Add class to tables-->
+          <div class="description"><p>Convert spectra data to Bayesil JSON format</p> </div>
+          <!-- button.toggle-source Source-->
+          <!-- pre.source-code
+          // code.language-javascript
+            // = symbol.code
+          -->
+        </div>
+        <div class="col-sm-2">
+          <div class="scrollspy">
+            <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav affix-top">
+              <li><a href="#default_for"><span class="no-wrap"><i class="alert alert-info"></i><span>default_for</span></span></a>
+              </li>
+              <li><a href="#pixel_ratio"><span class="no-wrap"><i class="alert alert-success"></i><span>pixel_ratio</span></span></a>
+              </li>
+              <li><a href="#pixel"><span class="no-wrap"><i class="alert alert-info"></i><span>pixel</span></span></a>
+              </li>
+              <li><a href="#merge"><span class="no-wrap"><i class="alert alert-info"></i><span>merge</span></span></a>
+              </li>
+              <li><a href="#unique_id"><span class="no-wrap"><i class="alert alert-info"></i><span>unique_id</span></span></a>
+              </li>
+              <li><a href="#round"><span class="no-wrap"><i class="alert alert-info"></i><span>round</span></span></a>
+              </li>
+              <li><a href="#elapsed_time"><span class="no-wrap"><i class="alert alert-info"></i><span>elapsed_time</span></span></a>
+              </li>
+              <li><a href="#index_of_value"><span class="no-wrap"><i class="alert alert-info"></i><span>index_of_value</span></span></a>
+              </li>
+              <li><a href="#lorentzian"><span class="no-wrap"><i class="alert alert-info"></i><span>lorentzian</span></span></a>
+              </li>
+              <li><a href="#sum_of_peaks"><span class="no-wrap"><i class="alert alert-info"></i><span>sum_of_peaks</span></span></a>
+              </li>
+              <li><a href="#xy_from_peaks"><span class="no-wrap"><i class="alert alert-info"></i><span>xy_from_peaks</span></span></a>
+              </li>
+              <li><a href="#peaks_in_range"><span class="no-wrap"><i class="alert alert-info"></i><span>peaks_in_range</span></span></a>
+              </li>
+              <li><a href="#peak_min"><span class="no-wrap"><i class="alert alert-info"></i><span>peak_min</span></span></a>
+              </li>
+              <li><a href="#peak_max"><span class="no-wrap"><i class="alert alert-info"></i><span>peak_max</span></span></a>
+              </li>
+              <li><a href="#number"><span class="no-wrap"><i class="alert alert-info"></i><span>number</span></span></a>
+              </li>
+              <li><a href="#isNumeric"><span class="no-wrap"><i class="alert alert-info"></i><span>isNumeric</span></span></a>
+              </li>
+              <li><a href="#decimalPlaces"><span class="no-wrap"><i class="alert alert-info"></i><span>decimalPlaces</span></span></a>
+              </li>
+              <li><a href="#convert_bayesil_data"><span class="no-wrap"><i class="alert alert-info"></i><span>convert_bayesil_data</span></span></a>
+              </li>
+              <li><a href="#create_bayesil_json"><span class="no-wrap"><i class="alert alert-info"></i><span>create_bayesil_json</span></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">Documentation generated with <a href="https://github.com/FGRibreau/doxx">Doxx </a></div>
+    </footer>
+    <!-- script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js")-->
+    <script src="http://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <!-- script(src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js")-->
+    <!-- script(src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js")-->
+    <!-- script(src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js")-->
+    <!-- script(src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js")-->
+    <!-- script(src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js")-->
+    <script>
+      /**
+       * Prism: Lightweight, robust, elegant syntax highlighting
+       * MIT license http://www.opensource.org/licenses/mit-license.php/
+       * @author Lea Verou http://lea.verou.me
+       */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]"){for(var r=0;r<e.length;r++)e[r]=n.stringify(e[r]);return e.join("")}var i={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};i.type=="comment"&&(i.attributes.spellcheck="true");t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+      Prism.languages.markup={comment:/&lt;!--[\w\W]*?--(&gt;|&gt;)/g,prolog:/&lt;\?.+?\?&gt;/,doctype:/&lt;!DOCTYPE.+?&gt;/,cdata:/&lt;!\[CDATA\[[\w\W]+?]]&gt;/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?&gt;/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|&gt;|"/g}},punctuation:/\/?&gt;/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+      Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+      Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,number:/\b-?(0x)?\d*\.?[\da-f]+\b/g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+      Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b(-?(0x)?\d*\.?[\da-f]+|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+      
+    </script>
+    <!-- Cusotom js-->
+    <!-- script.-->
+    <!--   $('.toggle-source').on('click', function() {-->
+    <!--     $(this).next().slideToggle('fast');-->
+    <!--   });-->
+    
+    <!-- App js-->
+    <script>
+      $(function(){
+        // Add scripts here
+      })
+    </script>
+  </body>
+</html>

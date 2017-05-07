@@ -1,0 +1,599 @@
+.sv-wrapper {
+  overflow: hidden;
+}
+
+/* Brush box for zooming in on a specific area of viewer */
+.active-brush .extent {
+  stroke: #888;
+  fill-opacity: .125;
+  fill: #888;
+  shape-rendering: auto;
+}
+/* Settings to clear brush after selection is complete */
+.empty-brush .extent {
+  stroke: none;
+  fill: none;
+}
+
+/* Box shown when selected peaks, clusters, etc. */
+.select-box {
+  stroke: #444;
+  stroke-dasharray: 5,5;
+  fill: none;
+}
+
+/* Pop up box containing text related to highlighted items */
+.jsv-highlight-popup-box {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 6px -1px grey;
+  background-color: white;
+  display: block;
+  text-align: center;
+}
+
+/* Container for text withing the highlight box */
+.jsv-highlight-text-container {
+  display: inline-block;
+}
+
+/* Pop up box containing text related to selected items */
+.jsv-select-popup-box {
+  position: absolute;
+  top: 1px;
+  margin: 0 auto;
+  width: 50%;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block;
+  text-align: left;
+}
+
+/* Container for text withing the highlight box */
+.jsv-select-text-container {
+  display: inline-block;
+}
+
+.jsv-select-text-container p {
+  margin: 0px;
+}
+
+/* SVClusterNavigator */
+.jsv-cluster-navigator {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 5px;
+}
+
+.jsv-cluster-navigator .cluster-unit {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.jsv-cluster-navigator .cluster-unit.active,
+.jsv-cluster-navigator .cluster-unit:hover {
+  background: rgb(200, 200, 200);
+}
+
+.jsv-cluster-navigator .jsv-cluster-nav {
+  cursor: pointer;
+  padding: 1px 2px;
+  border: 1px grey solid;
+  border-radius: 3px;
+}
+
+.jsv-cluster-navigator .jsv-cluster-nav-right {
+  margin-right: 5px;
+}
+
+.jsv-cluster-navigator .jsv-cluster-nav:hover {
+  background: rgb(200, 200, 200);
+}
+
+/* SVMenu */
+
+/* Size is actually set in SVMenu */
+.jsv-menu {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 41px;
+  margin: 0 auto;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px -1px grey;
+  background-color: white;
+  display: block;
+  text-align: left;
+}
+
+.jsv-menu svg {
+  shape-rendering: geometricPrecision;
+}
+
+.jsv-menu-button {
+  fill: rgb(255, 255, 255);
+  stroke: black;
+}
+
+.jsv-menu-button:not(.disabled):active {
+  fill: rgb(200, 200, 200);
+}
+
+.jsv-menu-button:not(.disabled):hover * {
+  stroke: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.jsv-menu-button .jsv-button-text {
+  fill: rgb(100, 100, 100);
+}
+
+.jsv-menu-button:not(.disabled):hover .jsv-button-text {
+  fill: rgb(0, 0, 0);
+}
+
+.jsv-button-image * {
+  stroke: rgb(100, 100, 100);
+}
+
+.jsv-menu-button.disabled {
+  stroke: rgb(200, 200, 200);
+}
+
+.jsv-menu-button.disabled .jsv-button-image * {
+  stroke: rgb(200, 200, 200);
+}
+
+.jsv-menu-button.disabled .jsv-button-text {
+  fill: rgb(200, 200, 200);
+}
+
+/* Size is actually set in SVMenu */
+.jsv-menu-handle {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  margin: 0 auto;
+  width: 40px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+
+
+/* Make the scroll bar appear */
+.jsv-scroll {
+  overflow: scroll;
+}
+
+.jsv-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.jsv-scroll::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.jsv-scroll::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.jsv-scroll::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.jsv-scroll::-webkit-scrollbar-track { 
+  background-color: #fff; 
+  border-radius: 8px; 
+} 
+
+.jsv-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.jsv-table th {
+  padding: 5px;
+  border-bottom: 2px solid #ddd;
+}
+
+.jsv-table td {
+  padding: 5px;
+  border-top: 1px solid #ddd;
+}
+
+
+/* Dialog Box  */
+.jsv-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding: 5px 10px 10px 10px;
+  margin: auto auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  background-color: white;
+  display: block;
+  text-align: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.jsv-dialog-dismiss {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  height: 20px;
+  width: 20px; 
+  background-color: white;
+  cursor: pointer;
+  color: #CCC;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  line-height: 20px;
+}
+
+.jsv-dialog-dismiss:active {
+  background-color: rgb(200, 200, 200);
+}
+
+.jsv-dialog-dismiss:hover {
+  color: rgb(0, 0, 0);
+}
+
+.jsv-dialog-header {
+  /* height: 25px; */
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid #CCC;
+  color: rgb(50, 50, 50);
+}
+
+.jsv-dialog-contents h3 {
+  font-size: 16px;
+}
+
+.jsv-dialog-contents {
+  margin-top: 5px;
+  overflow: scroll;
+}
+
+/* Area at bottom of dialog buttons */
+.jsv-dialog-footer {
+  height: 30px;
+  border-top: 1px solid #CCC;
+  padding-top: 5px;
+  text-align: right;
+}
+
+/* CSS styles similar to Bootstrap 3 */
+.jsv-button {
+  color: #333;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.jsv-alert {
+  border: 1px solid #bce8f1;
+  border-radius: 4px;
+  background-color: #d9edf7;
+  color: #31708f;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.jsv-label {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  width: 60px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.jsv-input {
+  border-radius: 4px;
+  color: #555;
+  border: 1px solid #CCC;
+  padding: 4px 8px;
+  display: table-cell;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  font-size: 14px;
+}
+
+.jsv-input:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.jsv-input-addon {
+  /* border-radius: 0 4px 4px 0; */
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: #eee;
+  color: #555;
+  border: 1px solid #CCC;
+  text-align: center;
+  display: table-cell;
+  font-size: 14px;
+}
+
+.jsv-input-group {
+  display: inline-table;
+  margin-bottom: 10px;
+}
+
+.jsv-input-group .jsv-input:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.jsv-input-addon:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0
+}
+
+
+/* Settings */
+.jsv-settings .jsv-label {
+  width: 140px;
+}
+
+
+/* Assignment Table */
+.jsv-assignment-table {
+  width: 100%;
+}
+
+.jsv-assignment-table tbody tr:hover {
+  cursor: pointer;
+  background-color: #F8F8F8;
+}
+
+.jsv-assignment-table tbody tr.selected {
+  cursor: pointer;
+  background-color: #EEF;
+}
+
+.jsv-assignment-table {
+  border: 1px solid #DDD;
+}
+
+.jsv-assignment-table tr {
+  border-bottom: 1px solid #DDD;
+}
+
+.jsv-assignment-table th,
+.jsv-assignment-table td {
+  border-left: 1px solid #DDD;
+}
+.jsv-assignment-table th.add-atom-cell,
+.jsv-assignment-table td.add-atom-cell {
+  border-left: none !important;
+  padding: 0px;
+}
+
+.jsv-assignment-table td.add-atom-cell a {
+  font-weight: bold;
+}
+
+.jsv-assignment-table th {
+  padding: 5px;
+}
+
+.jsv-assignment-table td {
+  padding: 2px;
+}
+
+.jsv-assignment-table .center {
+  text-align: center;
+}
+
+.jsv-assignment-table .jsv-badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  margin: 2px 2px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.jsv-assignment-table.editable .jsv-badge {
+  cursor: move;
+}
+
+.jsv-assignment-table .jsv-badge.selected {
+  border-width: 2px;
+  margin: 1px 1px; /* compensate for increased border width */
+}
+
+.jsv-assignment-table .atom-badge {
+  background-color: #DDD;
+  color: black;
+  /* border: 1px solid black; */
+}
+
+.jsv-assignment-table .atom-badge-symbol-C {
+  background-color: #DDD;
+  border: 1px solid black;
+}
+
+.jsv-assignment-table .atom-badge-symbol-N {
+  background-color: #DFDFFF;
+  border: 1px solid #8F8FFF;
+}
+
+.jsv-assignment-table .peak-badge {
+  background-color: #777;
+  color: #fff;
+}
+
+.jsv-assignment-table .badge-ghost {
+  opacity: 0.3;
+}
+
+.jsv-assignment-table .jsv-btn {
+  display: inline-block;
+  font-size: 12px;
+  padding: 1px 5px;
+  line-height: 1.5;
+  border-radius: 3px;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  background-color: #FFF;
+  border: 1px solid #CCC;
+}
+
+.jsv-assignment-table .jsv-btn:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: #E6E6E6;
+  border: 1px solid #ADADAD;
+}
+
+.jsv-assignment-table .jsv-btn:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+}
+
+
+
+/* JSStructure */
+
+/* Prevent Text selection in structure */
+svg text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+svg text::selection {
+  background: none;
+}
+
+.js-structure {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+
+.js-structure-resizer {
+  cursor: move;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+}
+
+.js-structure svg {
+  /* border: 1px solid #ddd; */
+  display: block;
+  margin: auto auto;
+}
+
+.js-structure .atom.nmr-1h .overlay {
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+.js-structure .atom.nmr-1h.highlight .overlay,
+.js-structure .atom.nmr-13c.highlight .overlay {
+  stroke-opacity: 1;
+  stroke-width: 1px;
+  stroke: #CCF;
+}
+
+.js-structure .atom.nmr-1h.selected .overlay,
+.js-structure .atom.nmr-13c.selected .overlay {
+  stroke-opacity: 1;
+  stroke-width: 1px;
+  stroke: #99F;
+  fill-opacity: 1;
+  fill: #CCF;
+}
+
+.js-structure .atom.nmr-1h.selected-partially .overlay {
+  stroke-opacity: 1;
+  stroke-width: 1px;
+  stroke: #99F;
+  fill-opacity: 1;
+  fill: #EEF;
+  stroke-dasharray: 2, 2;
+}
+
+.js-structure .menubar {
+  height: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.js-structure .menubar .menu-button {
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  text-align: center;
+  color: grey;
+}
+
+.js-structure .menubar .menu-button.button-on {
+  color: black;
+}
+
+/* #js-structure #menubar .structure-title { */
+.js-structure .menubar .structure-title {
+  display: inline-block;
+  padding-left: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+
+
+
+
